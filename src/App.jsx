@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import Config from './components/Config';
 import Timer from './components/Timer';
 import EndResultToast from './components/EndResultToast';
+import styled from 'styled-components';
 
 const ONE_MINUTE = 5;
+
+const Layout = styled.div``;
 
 function App() {
     const [numSets, setNumSets] = useState(0);
@@ -55,16 +58,20 @@ function App() {
     }, [isTimerRunning, time]);
 
     return (
-        <div className="App">
-            <EndResultToast show={isRoundFinished} />
-            <div>Current Set: {currentSet}</div>
-            <Config
-                startTimer={startTimer}
-                onNumSetsChange={onNumSetsChange}
-                numSets={numSets}
-            />
-            <Timer time={time} />
-        </div>
+        <Layout>
+            <div>
+                <EndResultToast show={isRoundFinished} />
+                <div>
+                    {currentSet}/{numSets}
+                </div>
+                <Config
+                    startTimer={startTimer}
+                    onNumSetsChange={onNumSetsChange}
+                    numSets={numSets}
+                />
+                <Timer time={time} />
+            </div>
+        </Layout>
     );
 }
 
