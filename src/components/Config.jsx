@@ -20,15 +20,26 @@ const StyledInput = styled.input`
     background-color: transparent;
     border: 1px solid #c4c4c4;
     padding: 1rem 0;
-    font-size: 2rem;
-    max-width: 10ch;
+    font-size: 2.5rem;
+    max-width: 4ch;
     text-align: center;
+    border-radius: 15px;
 `;
 
 const MinutesSetup = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
+    justify-content: center;
+    margin-bottom: 50px;
+`;
+
+const InputGroup = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.75rem;
 `;
 
 const Config = ({
@@ -41,15 +52,18 @@ const Config = ({
             <form onSubmit={startTimer}>
                 {/* <input type="number" name="" id="" /> */}
                 <MinutesSetup>
-                    <StyledInput
-                        type="number"
-                        name="numSets"
-                        id="numSets"
-                        min="1"
-                        value={numSets}
-                        onChange={onNumSetsChange}
-                    />
-                    <label htmlFor="numSets">Sets</label>
+                    <p>Every minute on a minute for</p>
+                    <InputGroup>
+                        <StyledInput
+                            type="number"
+                            name="numSets"
+                            id="numSets"
+                            min="1"
+                            value={numSets}
+                            onChange={onNumSetsChange}
+                        />
+                        <label htmlFor="numSets">Minutes</label>
+                    </InputGroup>
                 </MinutesSetup>
                 <StyledButton type="submit" value="Start Timer" />
             </form>

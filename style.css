@@ -5,10 +5,11 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
+    margin: 0;
 }
 
 #root {
-    background-color: #202040;
+    background-color: #202736;
     color: white;
     min-height: 100%;
 }
