@@ -17,4 +17,12 @@ A simple EMOM timer built with React + Vite. This timer is useful for interval t
 
 -   Resource Group
 -   Storage Account
--   DNS?
+
+# Creating A Service Principal for Deployments
+
+```sh
+spName=<your-sp-name>
+rgName=rg-emomtimer-dev
+subscriptionId=<your-subscription-id>
+az ad sp create-for-rbac --name $spName --role contributor  --scopes /subscriptions/$subscriptionId/resourceGroups/$rgName --sdk-auth
+```

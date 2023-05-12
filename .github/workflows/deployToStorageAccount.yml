@@ -1,0 +1,32 @@
+name: Deploy to Storage Account
+
+on:
+    push:
+        branches: [main]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+            - name: Use Node.js 18
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18.x'
+            - run: npm ci
+            - run: npm run build
+
+            - name: Upload to blob storage
+              uses: azure/CLI@v1
+              with:
+                  inlineScript: |
+                      az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode key -d '$web' -s dist/ --overwrite=true
+
+            - name: Logout of Azure
+              run: |
+                  az logout
+              if: always()
