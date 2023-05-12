@@ -5,10 +5,10 @@ import EndResultToast from './components/EndResultToast';
 import styled from 'styled-components';
 import Controls from './components/Controls';
 
-const halfwayThereVoice = new Audio('/halfway-there-voice.mp3');
-const wellDoneVoice = new Audio('/well-done-voice.mp3');
-const timerCountdownSound = new Audio('/timer-beep.mp3');
-const timerCountdownFinishedSound = new Audio('/timer-beep-finished.mp3');
+const halfwayThereVoice = new Audio('/audio/halfway-there-voice.mp3');
+const wellDoneVoice = new Audio('/audio/well-done-voice.mp3');
+const timerCountdownSound = new Audio('/audio/timer-beep.mp3');
+const timerCountdownFinishedSound = new Audio('/audio/timer-beep-finished.mp3');
 timerCountdownSound.volume = 0.3;
 timerCountdownFinishedSound.volume = 0.3;
 

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.input`
-    background: linear-gradient(
-        90deg,
-        rgba(255, 186, 37, 1) 35%,
-        rgba(254, 215, 29, 1) 100%
+    background-image: linear-gradient(
+        to right,
+        #77a1d3 0%,
+        #79cbca 51%,
+        #77a1d3 100%
     );
     border: none;
     border-radius: 50px;
