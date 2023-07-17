@@ -2,6 +2,9 @@
 
 A simple EMOM timer built with React + Vite. This timer is useful for interval training workouts.
 
+## View Project
+[View the EMOM timer in your browser](https://saemomtimerdev.z13.web.core.windows.net/)
+
 ## Getting Started
 
 1. Install all dependencies with `npm install`
